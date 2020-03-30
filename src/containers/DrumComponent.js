@@ -8,6 +8,7 @@ import KeysComponent from '../components/KeysComponent';
 import TypesComponent from '../components/TypesComponent';
 import VolumeComponent from '../components/VolumeComponent';
 import PowerComponent from '../components/PowerComponent';
+import LabelComponent from '../components/LabelComponent';
 
 import './DrumComponent.scss';
 
@@ -21,12 +22,18 @@ const DrumComponent = () => {
   const [fx, setFx] = useState(null);
   const [volume, setVolume] = useState(0.5);
   const [power, setPower] = useState(on);
+  const [label, setLabel] = useState('');
 
   const setAudio = () => {
     const effectMap = typeEffect === drums ? drumMap : miscMap;
+    console.log(effectMap)
     const audioMap = new Map();
     keys.forEach((element) => {
-      audioMap.set(element, new UIfx(effectMap.get(element)));
+      console.log(effectMap.get(element).file)
+      audioMap.set(element, {
+        file: new UIfx(effectMap.get(element).file),
+        label: effectMap.get(element).label
+      });
     });
     setFx(audioMap);
   };
@@ -36,7 +43,8 @@ const DrumComponent = () => {
   }, [typeEffect]);
 
   const keyHandler = (evt) => {
-    fx.get(evt.target.value).play(Number(volume));
+    fx.get(evt.target.value).file.play(Number(volume));
+    setLabel(fx.get(evt.target.value).label);
   };
 
   const typeHandler = (evt) => {
@@ -55,6 +63,7 @@ const DrumComponent = () => {
     <Container fluid>
       <KeysComponent keys={keys} handler={keyHandler} power={power} />
       <PowerComponent power={power} handler={powerHandler} />
+      <LabelComponent label={label} />
       <VolumeComponent vol={volume} handler={volumeHandler} power={power} />
       <TypesComponent type={typeEffect} handler={typeHandler} power={power} />
     </Container>
