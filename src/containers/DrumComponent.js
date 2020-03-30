@@ -5,11 +5,12 @@ import {
 import UIfx from 'uifx';
 
 import KeysComponent from '../components/KeysComponent';
+import TypesComponent from '../components/TypesComponent';
 
 import './DrumComponent.scss';
 
 import {
-  keys, drums, drumMap,
+  keys, drums, drumMap, miscMap,
 } from '../const';
 
 const DrumComponent = () => {
@@ -18,9 +19,10 @@ const DrumComponent = () => {
   const [fx, setFx] = useState(null);
 
   const setAudio = () => {
+    const effectMap = typeEffect === drums ? drumMap : miscMap;
     const audioMap = new Map();
     keys.forEach((element) => {
-      audioMap.set(element, new UIfx(drumMap.get(element)));
+      audioMap.set(element, new UIfx(effectMap.get(element)));
     });
     setFx(audioMap);
   };
@@ -29,13 +31,20 @@ const DrumComponent = () => {
     // console.log(typeEffect);
     setAudio();
   }, [typeEffect]);
+
   const keyHandler = (evt) => {
     fx.get(evt.target.value).play();
+  };
+
+  const typeHandler = (evt) => {
+    // console.log(evt.target.value);
+    setTypeEffect(evt.target.value);
   };
 
   return (
     <Container fluid>
       <KeysComponent keys={keys} handler={keyHandler} />
+      <TypesComponent type={typeEffect} handler={typeHandler} />
     </Container>
   );
 };
