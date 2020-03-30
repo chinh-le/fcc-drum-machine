@@ -24,12 +24,10 @@ const DrumComponent = () => {
   const [power, setPower] = useState(on);
   const [label, setLabel] = useState('');
 
-  const setAudio = () => {
-    const effectMap = typeEffect === drums ? drumMap : miscMap;
-    console.log(effectMap)
+  const setAudio = (typeFx) => {
+    const effectMap = typeFx === drums ? drumMap : miscMap;
     const audioMap = new Map();
     keys.forEach((element) => {
-      console.log(effectMap.get(element).file)
       audioMap.set(element, {
         file: new UIfx(effectMap.get(element).file),
         label: effectMap.get(element).label
@@ -39,7 +37,7 @@ const DrumComponent = () => {
   };
 
   useEffect(() => {
-    setAudio();
+    setAudio(typeEffect);
   }, [typeEffect]);
 
   const keyHandler = (evt) => {
