@@ -12,8 +12,8 @@ import miscQ from './assets/effects/miscs/champagne_cork_popping_c7x.mp3';
 import miscW from './assets/effects/miscs/cheers_bottle_one_ab_bb_voy.mp3';
 import miscE from './assets/effects/miscs/electric_screwdriver_with_wooden_place_resonance_lfj.mp3';
 import miscA from './assets/effects/miscs/gulp_sound_effect_big_v4l.mp3';
-import miscD from './assets/effects/miscs/hammer_hitting_prefab_wood_panel_n4n.mp3';
-import miscS from './assets/effects/miscs/horse_snorts_wbf.mp3';
+import miscS from './assets/effects/miscs/hammer_hitting_prefab_wood_panel_n4n.mp3';
+import miscD from './assets/effects/miscs/horse_snorts_wbf.mp3';
 import miscZ from './assets/effects/miscs/opening_wine_bottle_5uq.mp3';
 import miscX from './assets/effects/miscs/short_gasping_bqb.mp3';
 import miscC from './assets/effects/miscs/single_beeping_sharp_huz.mp3';
@@ -24,24 +24,78 @@ export const miscs = 'miscs';
 export const on = 'on';
 export const off = 'off';
 export const drumMap = new Map([
-  [keys[0], drumQ],
-  [keys[1], drumW],
-  [keys[2], drumE],
-  [keys[3], drumA],
-  [keys[4], drumS],
-  [keys[5], drumD],
-  [keys[6], drumZ],
-  [keys[7], drumX],
-  [keys[8], drumC],
+  [keys[0], {
+    file: drumQ,
+    label: 'Fat Big Techno Kick'
+  }],
+  [keys[1], {
+    file: drumW,
+    label: 'Heavy Techno Kick'
+  }],
+  [keys[2], {
+    file: drumE,
+    label: 'Natural Techno Bongo'
+  }],
+  [keys[3], {
+    file: drumA,
+    label: 'Panned Hard Techno Kick'
+  }],
+  [keys[4], {
+    file: drumS,
+    label: 'Punchy Clicky Techno Kick'
+  }],
+  [keys[5], {
+    file: drumD,
+    label: 'Pushing Steely Techno Kick'
+  }],
+  [keys[6], {
+    file: drumZ,
+    label: 'Reverbed Dark Rolling Techno Kick'
+  }],
+  [keys[7], {
+    file: drumX,
+    label: 'Sloppy Classic Techno Kick'
+  }],
+  [keys[8], {
+    file: drumC,
+    label: 'Summer House Tuned Kick'
+  }],
 ]);
 export const miscMap = new Map([
-  [keys[0], miscQ],
-  [keys[1], miscW],
-  [keys[2], miscE],
-  [keys[3], miscA],
-  [keys[4], miscS],
-  [keys[5], miscD],
-  [keys[6], miscZ],
-  [keys[7], miscX],
-  [keys[8], miscC],
+  [keys[0], {
+    file: miscQ,
+    label: 'Champagne Cork Popping'
+  }],
+  [keys[1], {
+    file: miscW,
+    label: 'Cheers Bottle One'
+  }],
+  [keys[2], {
+    file: miscE,
+    label: 'Electric Screwdriver'
+  }],
+  [keys[3], {
+    file: miscA,
+    label: 'Gulp Sound Effect'
+  }],
+  [keys[4], {
+    file: miscS,
+    label: 'Hammer Hitting'
+  }],
+  [keys[5], {
+    file: miscD,
+    label: 'Horse Snorts'
+  }],
+  [keys[6], {
+    file: miscZ,
+    label: 'Opening Wine Bottle'
+  }],
+  [keys[7], {
+    file: miscX,
+    label: 'Short Gasping'
+  }],
+  [keys[8], {
+    file: miscC,
+    label: 'Single Beeping Sharp'
+  }],
 ]);
