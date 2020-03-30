@@ -21,6 +21,8 @@ import miscC from './assets/effects/miscs/single_beeping_sharp_huz.mp3';
 export const keys = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
 export const drums = 'drums';
 export const miscs = 'miscs';
+export const on = 'on';
+export const off = 'off';
 export const drumMap = new Map([
   [keys[0], drumQ],
   [keys[1], drumW],
