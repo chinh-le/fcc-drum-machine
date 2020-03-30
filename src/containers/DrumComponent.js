@@ -3,18 +3,23 @@ import {
   Container, Row,
 } from 'react-bootstrap';
 
-import { drums } from '../const';
+import KeysComponent from '../components/KeysComponent';
 
 import './DrumComponent.scss';
 
+import { keys, drums } from '../const';
 
 const DrumComponent = () => {
   console.log('DrumComponent');
   const [typeEffect, setTypeEffect] = useState(drums);
 
+  const keyHandler = (evt) => {
+    console.log(evt.target.value);
+  };
+
   return (
     <Container fluid>
-      <Row />
+      <KeysComponent keys={keys} handler={keyHandler} />
     </Container>
   );
 };
