@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Container, Col, Row
+  Container
 } from 'react-bootstrap';
 import UIfx from 'uifx';
 

@@ -21,6 +21,8 @@ $theme-colors: (
     --drum-container-height: 200px;
     --drum-keyboard-width: 73px;
     --drum-keyboard-height: 60px;
+
+    font-family: 'Raleway', Helvetica, sans-serif;
 }
 .drum-keyboard-container,
 .drum-control-container {
@@ -30,4 +32,5 @@ $theme-colors: (
 .drum-keyboard__btn {
     width: var(--drum-keyboard-width);
     height: var(--drum-keyboard-height);
+    font-weight: 600;
 }
