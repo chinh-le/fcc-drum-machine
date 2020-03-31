@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Container,
+  Container, Col, Row
 } from 'react-bootstrap';
 import UIfx from 'uifx';
 
@@ -13,11 +13,10 @@ import LabelComponent from '../components/LabelComponent';
 import './DrumComponent.scss';
 
 import {
-  keys, drums, drumMap, miscMap, on
+  keys, drums, drumMap, miscMap, on, off
 } from '../const';
 
 const DrumComponent = () => {
-//   console.log('DrumComponent');
   const [typeEffect, setTypeEffect] = useState(drums);
   const [fx, setFx] = useState(null);
   const [volume, setVolume] = useState(0.5);
@@ -54,16 +53,20 @@ const DrumComponent = () => {
   };
 
   const powerHandler = (evt) => {
-    setPower(evt.target.value);
+    setPower(power === on ? off : on);
   };
 
   return (
     <Container fluid>
-      <KeysComponent keys={keys} handler={keyHandler} power={power} />
-      <PowerComponent power={power} handler={powerHandler} />
-      <LabelComponent label={label} />
-      <VolumeComponent vol={volume} handler={volumeHandler} power={power} />
-      <TypesComponent type={typeEffect} handler={typeHandler} power={power} />
+      <Row className="p-4 mx-auto" style={{width: '575px'}}>
+        <Col xs="6"><KeysComponent keys={keys} handler={keyHandler} power={power} /></Col>
+        <Col xs="6" className="d-flex flex-column justify-content-between">
+          <PowerComponent power={power} handler={powerHandler} />
+          <LabelComponent label={label} />
+          <VolumeComponent vol={volume} handler={volumeHandler} power={power} />
+          <TypesComponent type={typeEffect} handler={typeHandler} power={power} />
+        </Col>
+      </Row>
     </Container>
   );
 };
