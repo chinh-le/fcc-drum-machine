@@ -7,10 +7,10 @@ $theme-colors: (
 
 
 @media only screen and (max-width: 575px) {
-    .drum-keyboard {
+    .drum-pad-wrapper {
         order: 1;
     }
-    .drum-controls {
+    .drum-control-wrapper {
         order: 0;
     }
 }
@@ -19,18 +19,18 @@ $theme-colors: (
 .drum-container {
     --drum-container-width: 240px;
     --drum-container-height: 200px;
-    --drum-keyboard-width: 73px;
-    --drum-keyboard-height: 60px;
+    --drum-pad-width: 73px;
+    --drum-pad-height: 60px;
 
     font-family: 'Raleway', Helvetica, sans-serif;
 }
-.drum-keyboard-container,
+.drum-pad-container,
 .drum-control-container {
     width: var(--drum-container-width);
     height: var(--drum-container-height);
 }
-.drum-keyboard__btn {
-    width: var(--drum-keyboard-width);
-    height: var(--drum-keyboard-height);
+.drum-pad {
+    width: var(--drum-pad-width);
+    height: var(--drum-pad-height);
     font-weight: 600;
 }
