@@ -1,14 +1,16 @@
 import React from 'react';
+import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 import { drums, miscs, off } from '../const';
 
 const TypesComponent = (props) => {
   const { type, handler, power } = { ...props };
+  
   return (
-    <div>
-      <input onChange={handler} value={drums} checked={type === drums} disabled={power === off} type="radio" name="types" id="" />
-      <input onChange={handler} value={miscs} checked={type === miscs} disabled={power === off} type="radio" name="types" id="" />
-    </div>
+    <ToggleButtonGroup type="radio" name="type" defaultValue={type} className="mx-auto">
+      <ToggleButton onChange={handler} value={drums} disabled={power === off} variant="primary" className="text-capitalize">{drums}</ToggleButton>
+      <ToggleButton onChange={handler} value={miscs} disabled={power === off} variant="primary" className="text-capitalize">{miscs}</ToggleButton>
+    </ToggleButtonGroup>
   );
 };
 
