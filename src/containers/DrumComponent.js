@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import UIfx from 'uifx';
 
-import KeysComponent from '../components/KeysComponent';
+import PadComponent from '../components/PadComponent';
 import TypesComponent from '../components/TypesComponent';
 import VolumeComponent from '../components/VolumeComponent';
 import PowerComponent from '../components/PowerComponent';
@@ -57,13 +57,13 @@ const DrumComponent = () => {
   };
 
   return (
-    <Container fluid className="drum-container">
+    <Container fluid className="drum-container" id="drum-machine">
       <h1 className="text-center my-4">Drum Machine</h1>
       <div className="d-flex flex-row flex-wrap justify-content-center px-5">
-        <div className="mb-4 drum-keyboard">
-            <KeysComponent keys={keys} handler={keyHandler} power={power} />
+        <div className="mb-4 drum-pad-wrapper">
+            <PadComponent keys={keys} handler={keyHandler} power={power} />
         </div>
-        <div className="mb-4 drum-control">
+        <div className="mb-4 drum-control-wrapper">
           <div className="d-flex flex-column justify-content-between drum-control-container">
             <PowerComponent power={power} handler={powerHandler} />
             <LabelComponent label={label} />
