@@ -57,16 +57,22 @@ const DrumComponent = () => {
   };
 
   return (
-    <Container fluid>
-      <Row className="p-4 mx-auto" style={{width: '575px'}}>
-        <Col xs="6"><KeysComponent keys={keys} handler={keyHandler} power={power} /></Col>
-        <Col xs="6" className="d-flex flex-column justify-content-between">
-          <PowerComponent power={power} handler={powerHandler} />
-          <LabelComponent label={label} />
-          <VolumeComponent vol={volume} handler={volumeHandler} power={power} />
-          <TypesComponent type={typeEffect} handler={typeHandler} power={power} />
-        </Col>
-      </Row>
+    <Container fluid className="drum-container">
+      <h1 className="text-center my-4">Drum Machine</h1>
+      <div className="d-flex flex-row flex-wrap justify-content-center px-5">
+        <div className="mb-4 drum-keyboard">
+            <KeysComponent keys={keys} handler={keyHandler} power={power} />
+        </div>
+        <div className="mb-4 drum-control">
+          <div className="d-flex flex-column justify-content-between drum-control-container">
+            <PowerComponent power={power} handler={powerHandler} />
+            <LabelComponent label={label} />
+            <VolumeComponent vol={volume} handler={volumeHandler} power={power} />
+            <TypesComponent type={typeEffect} handler={typeHandler} power={power} />
+          </div>
+        </div>
+        
+      </div>
     </Container>
   );
 };

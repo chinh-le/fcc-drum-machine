@@ -6,3 +6,28 @@ $theme-colors: (
 @import "~bootstrap/scss/bootstrap";
 
 
+@media only screen and (max-width: 575px) {
+    .drum-keyboard {
+        order: 1;
+    }
+    .drum-controls {
+        order: 0;
+    }
+}
+
+
+.drum-container {
+    --drum-container-width: 240px;
+    --drum-container-height: 200px;
+    --drum-keyboard-width: 73px;
+    --drum-keyboard-height: 60px;
+}
+.drum-keyboard-container,
+.drum-control-container {
+    width: var(--drum-container-width);
+    height: var(--drum-container-height);
+}
+.drum-keyboard__btn {
+    width: var(--drum-keyboard-width);
+    height: var(--drum-keyboard-height);
+}
